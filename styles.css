@@ -1,0 +1,344 @@
+/* Paleta de Colores:
+   Azul oscuro: #1A5276 (para textos, bordes)
+   Azul medio: #3498DB (para fondos, resaltados)
+   Azul claro: #AED6F1 (para fondos de secciones)
+   Blanco: #FFFFFF
+   Rojo: #E74C3C (para mensajes de error, acentos)
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #F0F8FF; /* Un azul muy claro para el fondo general */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #FFFFFF; /* Fondo blanco para la "ventana flotante" */
+    border: 1px solid #1A5276;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px; /* Ancho máximo para la ventana */
+    overflow: hidden; /* Para que los bordes redondeados se vean bien */
+    padding-bottom: 20px; /* Espacio al final del contenedor */
+}
+
+/* Header */
+.header-php {
+    background-color: #3498DB; /* Azul medio para el fondo del header */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1A5276;
+    font-size: 1.5em; /* Tamaño de fuente más grande para el título */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto del título */
+}
+
+.header-php h1 {
+    margin: 0; /* Elimina el margen predeterminado del h1 */
+}
+
+.header-php h1 a {
+    color: inherit; /* Hereda el color blanco del padre */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    display: block; /* Para que ocupe todo el espacio del h1 */
+    padding: 0; /* Asegura que el padding del h1 no lo desplace */
+}
+
+/* Navigation Menu */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para que los elementos se coloquen en línea */
+    justify-content: space-around; /* Espacio entre los enlaces */
+    background-color: #AED6F1; /* Azul claro para el fondo del menú */
+    padding: 10px 0;
+    border-bottom: 1px solid #1A5276;
+    margin-bottom: 20px;
+}
+
+.main-nav li {
+    flex-grow: 1; /* Permite que los elementos crezcan y ocupen el espacio disponible */
+    text-align: center;
+}
+
+.main-nav a {
+    display: block; /* Para que el enlace ocupe todo el espacio del li */
+    padding: 10px 5px;
+    text-decoration: none;
+    color: #1A5276; /* Color de texto azul oscuro */
+    font-weight: bold;
+    border: 1px solid #1A5276; /* Borde alrededor de cada botón */
+    margin: 0 5px; /* Espacio entre los botones */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #3498DB; /* Azul medio al pasar el ratón */
+    color: #FFFFFF;
+}
+
+/* Main Content Area */
+.content-area {
+    padding: 0 20px; /* Espacio a los lados del contenido */
+    text-align: center;
+}
+
+/* Specific style for the main ITLA picture in index.php */
+.main-picture {
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 15px; /* Bordes redondeados */
+    border: 2px solid #1A5276;
+    margin-top: 20px; /* Espacio superior */
+    display: block; /* Para centrarla con margin auto si es necesario */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Styles for forms (general) and mi_tarjeta.php specifically */
+.form-section {
+    background-color: #AED6F1; /* Azul claro para el fondo de la sección del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    border: 1px solid #1A5276;
+    display: flex; /* Para el diseño de dos columnas */
+    gap: 30px; /* Espacio entre las columnas */
+    align-items: flex-start; /* Alinea los elementos al inicio */
+}
+
+.form-column {
+    flex: 1; /* Permite que las columnas ocupen el mismo espacio */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1A5276;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: calc(100% - 22px); /* Ancho completo menos padding y borde */
+    padding: 10px;
+    border: 1px solid #1A5276;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #FFFFFF;
+    color: #1A5276;
+}
+
+.form-group button[type="submit"] { /* Changed from input[type="submit"] to button */
+    background-color: #3498DB;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Espacio superior para el botón */
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #1A5276;
+}
+
+.result-box {
+    background-color: #3498DB; /* Azul medio para el cuadro de resultado */
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Altura fija para el cuadro */
+    border: 2px solid #1A5276;
+    word-break: break-word; /* Para evitar desbordamiento de texto */
+}
+
+/* Specific styles for mi_tarjeta.php (adjust as needed for other pages) */
+.mi-tarjeta-info p strong {
+    color: #1A5276;
+}
+
+.error-message {
+    background-color: #E74C3C; /* Rojo para mensajes de error */
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ... (Existing CSS from previous parts) ... */
+
+/* --- START: UPDATED STYLES FOR ACERCA_DE.PHP --- */
+
+/* Styles for Acerca de mi page (general container) */
+.about-me-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 30px;
+    padding: 20px;
+    background-color: #AED6F1; /* Azul claro */
+    border-radius: 8px;
+    border: 1px solid #1A5276;
+    margin: 20px;
+    align-items: flex-start; /* Alinea las columnas al inicio */
+}
+
+/* Profile Card Column */
+.profile-card {
+    flex: 1; /* Permite que ocupe espacio */
+    min-width: 300px; /* Ancho mínimo para la tarjeta de perfil */
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #1A5276;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #1A5276;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    border: 3px solid #3498DB; /* Borde azul para la foto */
+    margin-bottom: 15px;
+}
+
+.profile-card h2 {
+    color: #1A5276;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.profile-card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* New styles for the social buttons (Telegram/WhatsApp) */
+.social-btn {
+    display: flex; /* Para alinear icono y texto */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 10px 20px;
+    border-radius: 25px; /* Bordes más redondeados para un aspecto de píldora */
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 10px auto; /* Centra los botones y da espacio */
+    max-width: 250px; /* Ancho máximo para los botones */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.social-btn:hover {
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+.social-btn-icon {
+    width: 28px; /* Tamaño del icono un poco más grande */
+    height: 28px;
+    margin-right: 12px; /* Espacio entre icono y texto */
+    /*filter: invert(1); /* Hace que los iconos sean blancos si su color original no es contrastante */
+    /* Si los iconos que estás usando son de color y se ven bien en el fondo del botón, puedes quitar el filter */
+}
+
+.social-btn.telegram-btn {
+    background-color: #0088CC; /* Color de Telegram */
+}
+.social-btn.telegram-btn:hover {
+    background-color: #007bb5;
+}
+
+.social-btn.whatsapp-btn {
+    background-color: #25D366; /* Color de WhatsApp */
+}
+.social-btn.whatsapp-btn:hover {
+    background-color: #1DA851;
+}
+
+
+/* Video Section Column */
+.video-section {
+    flex: 2; /* Permite que el video ocupe más espacio que la tarjeta de perfil */
+    min-width: 400px; /* Ancho mínimo para la sección de video */
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #1A5276;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #1A5276;
+}
+
+.video-section h3 {
+    color: #1A5276;
+    margin-bottom: 15px;
+}
+
+.video-section iframe {
+    border-radius: 8px; /* Bordes redondeados para el iframe */
+    margin-bottom: 10px;
+    max-width: 100%; /* Asegura que el video se ajuste al contenedor */
+    display: block; /* Para centrar el iframe */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-description {
+    font-size: 0.9em;
+    color: #1A5276;
+}
+
+/* Styles for Reset Button in adivina.php */
+.reset-button {
+    background-color: #E74C3C; /* Rojo */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.reset-button:hover {
+    background-color: #C0392B; /* Rojo más oscuro */
+}
+
+/* --- END: UPDATED STYLES FOR ACERCA_DE.PHP --- */
