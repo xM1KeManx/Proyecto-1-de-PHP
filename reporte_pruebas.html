@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Reporte de Pruebas - BuscaMinasMichael</title>
 <style>
-  /* Estética sencilla, "hecha por un principiante" pero agradable */
   :root{--bg:#f6f8f7;--card:#ffffff;--accent:#19A34A;--muted:#666;--danger:#d9534f}
   body{font-family: "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);margin:0;padding:20px;color:#222}
   header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
@@ -150,12 +149,6 @@ Observaciones iniciales:
 - Asegúrate de servir la carpeta html desde un servidor local.
 - Sonido, reproducción y comportamiento pueden variar si el navegador corre en modo headless.
 - Si un test falla, toma la captura ubicada en screenshots/ y compártela con el equipo.
-
-Cambios recomendados:
-- Integrar pytest + pytest-html para generar reporte HTML automáticamente.
-- Añadir limpieza de localStorage entre tests para evitar efectos de datos previos.
-
-(Agrega aquí notas adicionales después de ejecutar las pruebas...)
       </div>
     </section>
 
@@ -179,16 +172,11 @@ Cambios recomendados:
   </div>
 
 <script>
-  // pequeño script para buscar capturas locales y mostrarlas cuando el usuario las pida.
   function showShots(suffix){
     const gallery = document.getElementById('evidenceGallery');
     gallery.innerHTML = '';
-    // asumimos carpeta relativa screenshots/
     const folder = 'screenshots/';
-    // nombres comunes que usarán los tests (timestamp + '_' + suffix)
-    // como no podemos listar carpetas por JS en local, intentamos mostrar los 10 últimos nombres comunes
-    // estrategia: buscar archivos con sufijo en una lista generada por el usuario (manualmente)
-    // Para UX: pedimos al usuario pegar los nombres encontrados
+
     const promptMsg = 'Para mostrar las capturas, pega los nombres completos de los archivos (separados por comas) que contengan "' + suffix + '"\\n\\nEjemplo: 1691234567_' + suffix + '.png,1691234667_' + suffix + '.png\\n\\nSi no tienes capturas aún, presiona Cancelar.';
     const input = prompt(promptMsg, '');
     if(!input) return;
@@ -212,3 +200,4 @@ Cambios recomendados:
 </script>
 </body>
 </html>
+
